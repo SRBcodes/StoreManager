@@ -1,0 +1,50 @@
+Method = ['GET']
+
+localhost:5000/department/int:<dept_id>/inventory
+
+
+Response if department is found:
+[
+    {
+        "item_id": 100,
+        "item_name": "Trousers",
+        "quantity": 1287
+    },
+    {
+        "item_id": 102,
+        "item_name": "my item",
+        "quantity": 135
+    }
+]
+
+Response based on department not found and invenotry not available:
+
+{
+    "error": "No inventory available for this department"
+}
+
+{
+    "error": "No inventory available for this department"
+}
+
+
+METHOD = ['POST']
+
+localhost:5000/inventory
+
+Request:
+
+    {
+        "item_id": 100,
+        "dept_id" : 100,
+        "quantity": 10
+    }
+
+Response:
+
+
+{
+    "item_id": 100,
+    "message": "Item successfully added to inventory",
+    "quantity": 1307
+}

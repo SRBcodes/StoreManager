@@ -1,0 +1,18 @@
+
+3. Working of the Alerting system:
+
+Considering a process that already handles the orders exist, there will be an additional check done while the items are removed from the inventory against the quantity.
+If the quantity available is less than the threshold qty(w.r.t item_id/dept) which is stored in separate table, then the alert/notification is sent to the concerned team.
+
+Additionally, we can have a job that runs every 5-10 mins that checks the inventory as the inventoryquantity can change due to expiry, damage or returned orders etc.
+
+
+
+
+4. Assumptions made for this scenario:
+
+1) Considering there is already separate service/process that handles the orders and reduces the quantity from the inventory.
+2) There is only one item per department, single item cannot be part of multiple departments
+3) There is a separate table/prcess that handles the price related information of the items categorized under specific departments.
+4) Threshold quantity is maintained against the item/dept in a separate table.
+5) Concurrency is already handled accounting for the race conditions.
